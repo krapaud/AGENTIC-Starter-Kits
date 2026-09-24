@@ -10,6 +10,7 @@
 - `policies/`, `agents/`, `prompts/`, `skills/`, `scripts/`, `templates/`, `evaluations/`
 - `policies/DOCUMENTATION-LANGUAGE-POLICY.md` impose la qualité et la langue des documents techniques.
 - `policies/TRELLO-VISUAL-SYSTEM.md` définit les listes, étiquettes et règles de lisibilité Trello.
+- `policies/TRELLO-START-STATE.md` impose le passage dans `In Progress` et la synchronisation séquentielle.
 
 ## Attentes de qualité
 

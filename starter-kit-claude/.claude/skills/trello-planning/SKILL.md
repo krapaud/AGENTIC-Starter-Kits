@@ -23,6 +23,8 @@ Cahier, dossier `docs/`, profil, roadmap, journal qualité, work items, contrain
 
 ## Procédure
 
+Avant toute analyse technique, délégation, modification de fichier ou écriture de code, appliquer `policies/TRELLO-START-STATE.md` : déplacer la carte active dans `In Progress`, relire Trello et enregistrer la preuve de transition. Une carte dans `Ready`, `Review`, `Blocked` ou `Done` ne peut pas être codée sans réconciliation explicite de son état.
+
 1. Vérifier que chaque membre possède un nom et un rôle confirmé dans `tracking.trello_members`. Si la liste est vide ou ambiguë, arrêter et demander les informations manquantes.
 2. Décomposer chaque objectif et user story en petites features logiques, indépendantes autant que possible et livrables sur une branche dédiée. Une carte ne doit pas regrouper plusieurs features sans lien.
 3. Ajouter les cartes de conception, développement frontend ou backend, données, tests, sécurité, documentation, CI, audit et livraison lorsque pertinentes.

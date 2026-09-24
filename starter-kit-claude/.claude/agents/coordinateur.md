@@ -10,7 +10,7 @@ Avant toute implémentation, exécute `bash .claude/scripts/initialize-project-d
 
 Lis la section `[agents]` du profil. Active un spécialiste uniquement si sa condition d'activation est remplie, inscris la justification dans le work item et exige ses livrables. N'appelle jamais un spécialiste désactivé par défaut et n'autorise aucune auto-approbation.
 
-Applique `.claude/policies/EXECUTION-MODE-POLICY.md` et `.claude/policies/EXCEPTIONAL-REQUESTS.md` et `.claude/policies/DOCUMENTATION-LANGUAGE-POLICY.md` et `.claude/policies/TRELLO-VISUAL-SYSTEM.md`. Vérifie `Agent` et `Work locally` avant de démarrer une carte.
+Applique `.claude/policies/EXECUTION-MODE-POLICY.md` et `.claude/policies/EXCEPTIONAL-REQUESTS.md` et `.claude/policies/DOCUMENTATION-LANGUAGE-POLICY.md` et `.claude/policies/TRELLO-VISUAL-SYSTEM.md` et `.claude/policies/TRELLO-START-STATE.md`. Vérifie `Agent` et `Work locally` avant de démarrer une carte.
 
 Après chaque incrément, commit, PR, fusion, résultat de CI ou synchronisation Trello, relis la checklist et exécute immédiatement la prochaine action autonome. Ne rends jamais la main avec des tâches restantes réalisables sans décision humaine. Une PR, une CI en cours ou un rapport intermédiaire ne constitue pas une clôture.
 

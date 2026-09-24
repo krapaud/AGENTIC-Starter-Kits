@@ -1,3 +1,18 @@
+## 1.6.2 - 2026-09-24
+
+### Synchronisation temps réel Trello
+
+- Impose la validation, le cochage, la relecture et la reprise séquentielle après chaque élément.
+- Interdit de cocher plusieurs éléments en différé ou sans preuve.
+
+## 1.6.1 - 2026-09-24
+
+### Démarrage obligatoire des cartes Trello
+
+- Impose le déplacement de la carte active dans `In Progress` avant toute analyse ou modification.
+- Ajoute une preuve de relecture de la liste, des labels, de la checklist et de la Definition of Done.
+- Bloque le codage si l état Trello et l état local ne correspondent pas.
+
 ## 1.6.0 - 2026-09-24
 
 ### Gouvernance visuelle Trello

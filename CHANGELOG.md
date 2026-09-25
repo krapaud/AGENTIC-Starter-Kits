@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.6.3 - 2026-09-25
+
 ### Autonomie après le cadrage
 
 - Conserve les réponses partielles au questionnaire et ne redemande que les décisions réellement manquantes.
@@ -12,7 +14,7 @@
 - Bloque les branches qui mélangent internationalisation, configuration, maintenance ou plusieurs work items.
 - Documente la création automatique d’une branche propre depuis la branche d’intégration et le report des seuls commits pertinents.
 
-## 1.6.2 - 2026-09-24
+## 1.6.3 - 2026-09-24
 
 ### Synchronisation temps réel Trello
 

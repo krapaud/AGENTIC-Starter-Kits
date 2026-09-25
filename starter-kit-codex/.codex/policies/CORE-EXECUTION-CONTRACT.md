@@ -8,6 +8,8 @@ Ce contrat est obligatoire pour tout agent, Skill, work item et mode projet. En 
 
 Avant toute action, le Coordinateur construit la liste des obligations applicables à partir du cahier, du profil, du work item, des politiques, du Skill actif, de la carte et de la Definition of Done. Chaque obligation possède : un identifiant, un responsable, un déclencheur, une action, une preuve, un état et une prochaine vérification.
 
+Le registre exécutable est conservé dans `work-items/<identifiant>/obligations.tsv`. Il est créé avec le work item et validé par `scripts/validate-obligations.sh` avant push et livraison.
+
 États autorisés : `pending`, `running`, `verified`, `needs-review`, `blocked` et `not-applicable`. `not-applicable` exige une justification. Une obligation sans preuve reste `pending`.
 
 ## Boucle non interruptible
@@ -50,4 +52,3 @@ Après chaque checkpoint, `RUNTIME-STATE.md` conserve au minimum : session, work
 ## Clôture
 
 Avant toute conclusion, le Coordinateur relit le registre complet. La clôture est autorisée uniquement si toutes les obligations sont `verified`, `not-applicable` avec justification, ou `needs-review` avec une décision humaine explicitement attendue. `blocked` exige la preuve du blocage, les alternatives tentées et les tâches indépendantes terminées.
-

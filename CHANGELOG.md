@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.8.0 - 2026-09-25
+
+### Portes de gouvernance exécutables
+
+- Ajoute un registre TSV structuré aux nouveaux work items pour les huit portes du contrat central.
+- Bloque le push et la livraison lorsqu une porte reste ouverte ou sans preuve.
+- Ajoute des scénarios de non-régression pour les registres incomplets, valides et sans preuve.
+- Exécute les tests de gouvernance dans la CI et contrôle la parité Codex et Claude.
+
 ## 1.7.0 - 2026-09-25
 
 ### Contrat de gouvernance central

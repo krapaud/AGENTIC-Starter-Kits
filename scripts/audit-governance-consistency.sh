@@ -27,6 +27,8 @@ cmp -s "$codex_inventory" "$claude_inventory" || fail "inventaires Codex et Clau
 
 cmp -s "$codex/policies/CORE-EXECUTION-CONTRACT.md" "$claude/policies/CORE-EXECUTION-CONTRACT.md" || fail "contrats centraux Codex et Claude différents"
 cmp -s "$codex/policies/GIT-FLOW.md" "$claude/policies/GIT-FLOW.md" || fail "politiques GitFlow Codex et Claude différentes"
+cmp -s "$codex/templates/obligation-register.tsv" "$claude/templates/obligation-register.tsv" || fail "registres d obligations Codex et Claude différents"
+cmp -s "$codex/scripts/validate-obligations.sh" "$claude/scripts/validate-obligations.sh" || fail "validateurs d obligations Codex et Claude différents"
 
 for entry in "$root/starter-kit-codex/AGENTS.md" "$root/starter-kit-claude/CLAUDE.md"; do
   require_text "$entry" "CORE-EXECUTION-CONTRACT.md"

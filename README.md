@@ -1,6 +1,6 @@
 # Agentic Starter Kits
 
-[![Version](https://img.shields.io/badge/version-1.7.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.8.0-blue.svg)](VERSION)
 
 ## Construire avec une IA comme avec une équipe senior
 
@@ -182,7 +182,7 @@ Le kit impose :
 
 Les kits Codex et Claude appliquent un contrat central commun. Chaque work item produit un registre d obligations avec responsable, déclencheur, preuve, état et prochaine vérification. Huit portes contrôlent l intake, la conception, le périmètre Git, les validations, la documentation, les intégrations, l audit et la livraison. Une porte non prouvée interdit la clôture sans interrompre les tâches indépendantes.
 
-`RUNTIME-STATE.md` conserve les obligations ouvertes, la prochaine action, la dernière preuve, l état CI et les intégrations. Une nouvelle conversation reprend cette action avant tout résumé. Le script `scripts/audit-governance-consistency.sh` bloque les divergences structurelles entre les kits et vérifie les invariants critiques.
+`RUNTIME-STATE.md` conserve les obligations ouvertes, la prochaine action, la dernière preuve, l état CI et les intégrations. Une nouvelle conversation reprend cette action avant tout résumé. Chaque work item possède aussi un registre `obligations.tsv` vérifié automatiquement avant push et livraison. Les scripts `scripts/audit-governance-consistency.sh` et `scripts/test-executable-gates.sh` bloquent les divergences et les portes sans preuve.
 
 ## Sécurité et confiance
 
@@ -244,7 +244,7 @@ La politique [WEB-RESEARCH-POLICY.md](starter-kit-codex/.codex/policies/WEB-RESE
 - [Versionnement](VERSIONING.md)
 - [Historique des changements](CHANGELOG.md)
 
-## État fonctionnel de la version 1.7.0
+## État fonctionnel de la version 1.8.0
 
 La version actuelle inclut 16 agents au total : six agents du noyau et dix spécialistes optionnels. Elle inclut leurs politiques de modèles, la gouvernance d’activation, les Skills d’orchestration, les scripts d’initialisation, les checkpoints, le suivi des coûts et les contrôles CI. Les détails contractuels des spécialistes sont dans `SPECIALIST-AGENTS.md` dans chaque kit.
 

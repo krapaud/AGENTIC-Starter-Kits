@@ -39,6 +39,9 @@ jobs:
       - name: Validate documentation and version consistency
         run: bash scripts/check-documentation-consistency.sh
 
+      - name: Validate executable governance gates
+        run: bash scripts/test-executable-gates.sh
+
       - name: Require all public READMEs for starter kit changes
         shell: bash
         run: |

@@ -15,11 +15,13 @@ En l'absence de mode général ou maintenance, si `.codex/PROJECT-BRIEF.md` est 
 
 Demander à l'utilisateur : `Envoie-moi le cahier des charges du projet. Je ne démarre aucune analyse, choix technique, modification ou orchestration avant sa réception.`
 
-Après réception du cahier dans le chat, demander explicitement si l’utilisateur veut un Trello complet et attendre sa réponse oui ou non. Cette question fait partie de la série de cadrage et doit proposer le meilleur choix recommandé avec sa justification. Enregistrer cette décision dans `project-profile.toml` avant de continuer. Si la réponse est oui, vérifier la disponibilité du plugin Trello. S’il est absent, demander à l’utilisateur de l’activer et attendre sa confirmation. Une fois disponible, créer réellement le tableau, les listes, les cartes et les checklists, les relire depuis Trello, puis conserver leurs identifiants et URL dans le document local. Ne jamais déclarer la synchronisation réussie sans cette relecture.
+Après réception du cahier dans le chat, demander explicitement si l’utilisateur veut un Trello complet et attendre sa réponse oui ou non. Cette question fait partie de la série de cadrage et doit proposer le meilleur choix recommandé avec sa justification. Enregistrer cette décision dans `project-profile.toml` avant de continuer. Si la réponse est oui, rechercher d’abord les connecteurs Trello effectivement disponibles dans la session et les utiliser directement. Ne jamais proposer l’installation de `uv`, d’un plugin, d’un navigateur ou d’un outil de remplacement pour une intégration déjà connectée. Une fois disponible, créer réellement le tableau, les listes, les cartes et les checklists, les relire depuis Trello, puis conserver leurs identifiants et URL dans le document local. Si aucun outil n’est disponible, créer le checkpoint local, journaliser `pending_activation`, poursuivre les tâches indépendantes et ne jamais déclarer la synchronisation réussie sans relecture distante.
 
 Après réception du cahier dans le chat, le formaliser dans `.codex/PROJECT-BRIEF.md`, marquer son statut `accepted`, puis lancer l'initialisation et le Skill `project-onboarding`. Avant toute implémentation, exécuter `bash .codex/scripts/initialize-project-design.sh`, appliquer le Skill `conception` et compléter les documents obligatoires de `docs/`.
 
 ## Après acceptation du cahier
+
+Lire et appliquer `.codex/policies/CORE-EXECUTION-CONTRACT.md` avant toute orchestration. Construire le registre des obligations, évaluer toutes les portes à chaque transition et interdire toute clôture tant qu une obligation applicable n est pas prouvée.
 
 Appliquer `.codex/policies/EXECUTION-MODE-POLICY.md`. Pour toute construction, utiliser le mode Agent avec Work locally. Le mode Plan et la lecture seule ne permettent pas de poursuivre une carte.
 

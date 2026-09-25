@@ -1,5 +1,20 @@
 ## Unreleased
 
+## 1.7.0 - 2026-09-25
+
+### Contrat de gouvernance central
+
+- Ajoute un registre d obligations persistant avec responsable, déclencheur, preuve, état et prochaine action.
+- Ajoute huit portes obligatoires couvrant intake, conception, périmètre, validation, documentation, intégrations, audit et livraison.
+- Aligne les parcours Codex et Claude et ajoute un audit automatisé de cohérence.
+- Interdit la clôture tant qu une obligation applicable ne possède pas de preuve ou une justification explicite.
+
+### Synchronisation Trello
+
+- Privilégie les connecteurs Trello déjà disponibles dans la session.
+- Interdit de proposer l’installation d’outils de remplacement lorsqu’une intégration connectée existe.
+- Ajoute un checkpoint local et la poursuite des tâches indépendantes lorsque Trello est réellement indisponible.
+
 ## 1.6.3 - 2026-09-25
 
 ### Autonomie après le cadrage
@@ -14,7 +29,7 @@
 - Bloque les branches qui mélangent internationalisation, configuration, maintenance ou plusieurs work items.
 - Documente la création automatique d’une branche propre depuis la branche d’intégration et le report des seuls commits pertinents.
 
-## 1.6.3 - 2026-09-24
+## 1.6.2 - 2026-09-24
 
 ### Synchronisation temps réel Trello
 

@@ -16,6 +16,15 @@
 - Raison de la pause : [[A_COMPLETER]]
 - Dernière action réalisée : [[A_COMPLETER]]
 
+## Registre d obligations
+
+- Obligations ouvertes : [[A_COMPLETER]]
+- Portes vérifiées : [[A_COMPLETER]]
+- Portes non vérifiées : [[A_COMPLETER]]
+- Dernière preuve observable : [[A_COMPLETER]]
+- État CI : unknown | running | passed | failed | not-applicable
+- État des intégrations : [[A_COMPLETER]]
+
 ## Reprise
 
 - Dernier commit : [[A_COMPLETER]]

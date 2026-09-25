@@ -16,9 +16,17 @@ Les limites par défaut sont `75` fichiers et `1200` lignes modifiées par commi
 
 Une branche ne passe vers l intégration qu avec work item, conception à jour, tests proportionnés, preflight vert, preuves, audit indépendant et rapport sécurité lorsque la matrice l exige. `main` reçoit seulement des livraisons validées. Ne pas réécrire l historique des branches protégées.
 
+## Contrôle de périmètre avant livraison
+
+Avant tout commit final ou toute Pull Request, le Coordinateur compare le diff complet depuis la branche d intégration au résultat attendu, au hors périmètre et aux fichiers autorisés du work item. Il exécute au minimum `git diff --name-status <branche-intégration>...HEAD`, relit chaque commit et classe chaque fichier : `autorisé`, `preuve nécessaire`, `hors périmètre` ou `généré`. Un fichier hors périmètre bloque la livraison. Il ne doit pas être supprimé ou masqué pour obtenir un diff vert.
+
+Si la branche contient plusieurs objectifs, un changement de maintenance, de configuration ou d’internationalisation sans lien direct, ou plusieurs work items, le Coordinateur bloque la PR et crée une branche propre depuis la branche d’intégration. Il reporte uniquement les commits pertinents, vérifie le diff de la nouvelle branche et conserve l’ancienne branche comme archive jusqu’à décision de l’utilisateur. Une PR ne doit jamais mélanger des domaines simplement parce que les tests passent.
+
 ## Contrôle automatisé
 
 `verify-before-push.sh` bloque le push direct vers une branche protégée, les noms de branche non conformes et les commits dépassant les limites déclarées. Ne jamais contourner ce contrôle avec `--no-verify`.
+
+Le contrôle de livraison doit également échouer si le work item, la branche, le titre de PR et le diff ne décrivent pas le même objectif. Les changements non rattachés reçoivent leur propre work item et leur propre branche avant toute promotion.
 
 ## État inconnu
 

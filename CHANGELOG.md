@@ -6,6 +6,12 @@
 - Lance automatiquement l onboarding, la conception et le flux prévu dès que les blocages de cadrage sont levés.
 - Interdit de demander « Continue » ou « fais tout » pour déclencher une étape déjà autorisée.
 
+### Intégrité des branches
+
+- Ajoute un contrôle explicite du diff complet par rapport au work item avant commit final et Pull Request.
+- Bloque les branches qui mélangent internationalisation, configuration, maintenance ou plusieurs work items.
+- Documente la création automatique d’une branche propre depuis la branche d’intégration et le report des seuls commits pertinents.
+
 ## 1.6.2 - 2026-09-24
 
 ### Synchronisation temps réel Trello

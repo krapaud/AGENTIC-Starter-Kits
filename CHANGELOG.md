@@ -1,3 +1,11 @@
+## Unreleased
+
+### Autonomie après le cadrage
+
+- Conserve les réponses partielles au questionnaire et ne redemande que les décisions réellement manquantes.
+- Lance automatiquement l onboarding, la conception et le flux prévu dès que les blocages de cadrage sont levés.
+- Interdit de demander « Continue » ou « fais tout » pour déclencher une étape déjà autorisée.
+
 ## 1.6.2 - 2026-09-24
 
 ### Synchronisation temps réel Trello

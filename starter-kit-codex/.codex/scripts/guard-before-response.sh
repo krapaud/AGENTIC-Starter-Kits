@@ -18,6 +18,10 @@ case "$status" in
     [[ "$next" =~ ^(none|aucune|aucun)$ ]] || fail "next_action reste ouverte: $next"
     [[ "$open" =~ ^(0|none|aucune|aucun)$ ]] || fail "open_checklist_items non nul: $open"
     [[ -n "$evidence" && "$evidence" != *"A_COMPLETER"* ]] || fail "last_observable_evidence absente"
+    obligations="$script_dir/validate-obligations.sh"
+    if [ -x "$obligations" ]; then
+      bash "$obligations" --if-present >/dev/null || fail "obligations non vérifiées"
+    fi
     ;;
   needs-review|blocked)
     [[ -n "$evidence" && "$evidence" != *"A_COMPLETER"* ]] || fail "preuve obligatoire absente pour $status"

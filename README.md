@@ -348,3 +348,5 @@ Pour initialiser un projet dans une conversation déjà ouverte, envoyer `Mode i
 La commande doit être envoyée seule depuis la conversation qui travaille déjà sur le projet. Elle force l'agent à relire son état, à vérifier le cahier des charges et à suspendre toute modification tant que le cahier n'est pas reçu et accepté. Après cette étape, les questions manquantes sont posées avec une recommandation, puis les documents de conception et le plan de travail sont créés.
 
 La procédure complète se trouve dans [INSTALLATION.md](INSTALLATION.md), section « Initialiser une conversation déjà ouverte ».
+
+Le synchroniseur external met à jour directement le répertoire du kit et conserve les données projet protégées.

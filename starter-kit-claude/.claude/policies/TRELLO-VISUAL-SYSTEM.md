@@ -18,6 +18,10 @@ Create missing lists in this order:
 
 Use `Inbox` only for captured requests. Move a card to `Ready` after its scope, owner, dependencies and Definition of Done are complete. A card remains in `In Progress` while work is active. Use `Blocked` only with a documented blocker and next action. Use `Review` only when implementation is complete and a real review remains. Use `Done` only after every checklist item is proven.
 
+### Dimensionnement selon l'équipe
+
+Les listes de gouvernance restent stables (`Inbox`, `Ready`, `Blocked`, `Review`, `Done`, `Archived`). Les colonnes de travail remplacent `In Progress` selon le nombre de personnes réellement affectées au projet, après déduplication des membres et confirmation de leur rôle : `work_columns = min(4, max(1, ceil(active_members / 2)))`. Une ou deux personnes utilisent une seule colonne ; trois ou quatre utilisent deux colonnes ; cinq à huit utilisent trois colonnes ; neuf personnes ou plus utilisent quatre colonnes maximum. Chaque colonne a un responsable ou groupe documenté. Si les membres ne sont pas confirmés, conserver une seule colonne `In Progress` et demander la clarification avant d'en créer d'autres. Le Coordinateur réévalue ce dimensionnement lorsque l'équipe change de taille.
+
 ## Standard labels
 
 Create or reuse these labels with the same names and colors:

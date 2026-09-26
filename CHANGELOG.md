@@ -1,5 +1,13 @@
 ## Unreleased
 
+## 1.12.3 - 2026-09-26
+
+### Dimensionnement adaptatif des tableaux Trello
+
+- Adapte le nombre de colonnes de travail au nombre de personnes actives.
+- Conserve les colonnes de gouvernance stables et limite les colonnes de travail à quatre.
+- Impact de release : `patch`.
+
 ## 1.12.2 - 2026-09-26
 
 ### Enchaînement automatique des cartes Trello

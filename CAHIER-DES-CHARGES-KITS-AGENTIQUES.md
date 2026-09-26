@@ -203,7 +203,7 @@ Les kits sont déclarés conformes uniquement lorsque tous les P0 sont implémen
 
 ## 17. État d'implémentation du dépôt
 
-À la version 1.11.0, le dépôt fournit :
+À la version 1.12.0, le dépôt fournit :
 
 - l'état runtime étendu dans les deux kits ;
 - le garde avant réponse avec contrôle des actions requises, du budget, de la session, du dernier tour, des outils et de l'environnement ;
@@ -211,5 +211,6 @@ Les kits sont déclarés conformes uniquement lorsque tous les P0 sont implémen
 - les politiques de continuité, de secrets, d'idempotence, de traces et d'artefacts ;
 - l'audit automatique de parité et les tests des portes exécutables ;
 - le cahier des charges et les sources normatives ci-dessus.
+- l'activation automatique du Goal pour les cartes Trello comportant au moins deux cases ouvertes.
 
 Les éléments Agents API, webhooks et environnements distants restent des contrats documentés et des états `not-required` par défaut. Leur activation nécessite un adaptateur d'orchestrateur qui implémente les événements, la vérification des signatures, la reconnexion et le stockage persistant ; le kit ne simule pas cette intégration.

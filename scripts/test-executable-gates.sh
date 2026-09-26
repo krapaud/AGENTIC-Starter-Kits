@@ -27,11 +27,15 @@ for kit in codex claude; do
     exit 1
   fi
   grep -q "état non terminal" "$test_root/guard.err"
-  perl -0pi -e 's/execution_status: .*/execution_status: complete/; s/next_action: .*/next_action: none/; s/open_checklist_items: .*/open_checklist_items: 0/; s/last_observable_evidence: .*/last_observable_evidence: test-evidence/' "$config/RUNTIME-STATE.md"
-  bash "$config/scripts/guard-before-response.sh" >/dev/null
+  perl -0pi -e 's/execution_status: .*/execution_status: complete/; s/next_action: .*/next_action: none/; s/open_checklist_items: .*/open_checklist_items: 0/; s/last_observable_evidence: .*/last_observable_evidence: test-evidence/; s/ci_status: .*/ci_status: success/; s/trello_sync_status: .*/trello_sync_status: disabled/' "$config/RUNTIME-STATE.md"
+  if bash "$config/scripts/guard-before-response.sh" >/dev/null 2>&1; then
+    echo "ECHEC TEST: une obligation pending aurait dû bloquer complete $kit"
+    exit 1
+  fi
 
   perl -0pi -e 's/\tpending\tnot-collected\t/\tverified\ttest-evidence\t/g' "$config/work-items/demo/obligations.tsv"
   bash "$config/scripts/validate-obligations.sh" --require-active >/dev/null
+  bash "$config/scripts/guard-before-response.sh" >/dev/null
 
   perl -0pi -e 's/\tverified\ttest-evidence\t/\tverified\tnot-collected\t/' "$config/work-items/demo/obligations.tsv"
   if bash "$config/scripts/validate-obligations.sh" --require-active >/dev/null 2>&1; then

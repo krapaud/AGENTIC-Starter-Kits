@@ -3,6 +3,7 @@
 ## Démarrer
 
 - `README.md` : présentation, capacités, agents et limites.
+- `CAHIER-DES-CHARGES-KITS-AGENTIQUES.md` : exigences, écarts documentaires, sécurité, reprise, tests et Definition of Done des deux kits.
 - `INSTALLATION.md` : installation guidée, initialisation, mises à jour et dépannage.
 - `distributions/README.md` : choix entre les modes `native` et `external`.
 

@@ -1,5 +1,39 @@
 ## Unreleased
 
+## 1.11.0 - 2026-09-26
+
+### Application du cahier des charges agentique
+
+- Ajoute la validation explicite de la session, du dernier tour et des échecs d'outils.
+- Ajoute `validate-session-state.sh` aux kits Codex et Claude.
+- Renforce le garde avant réponse sur les états distribués et les environnements distants.
+- Documente l'état d'implémentation et les limites des adaptateurs Agents API/webhooks.
+- Impact de release : `minor`.
+
+## 1.10.0 - 2026-09-26
+
+### Continuité de session fondée sur les objectifs
+
+- Ajoute une politique commune de continuité de session aux kits Codex et Claude.
+- Documente l'utilisation d'un objectif persistant natif lorsqu'il est disponible, avec résultat attendu, preuves, contraintes, budget et condition de blocage.
+- Ajoute les métadonnées d'objectif à `RUNTIME-STATE.md`.
+- Interdit de présenter Agent, Work locally, idle ou un tour terminé comme une garantie d'autonomie continue.
+- Aligne la clôture sur la vérification réelle des outils et des preuves.
+- Ajoute les contrôles runtime pour les actions requises, reprises, budgets, environnements, requêtes en attente et artefacts.
+- Documente l'idempotence, la signature et la déduplication des webhooks, la traçabilité et la protection des secrets.
+- Impact de release : `minor`.
+
+## 1.9.0 - 2026-09-26
+
+### Continuité de session fondée sur les objectifs
+
+- Ajoute une politique commune de continuité de session aux kits Codex et Claude.
+- Documente l'utilisation d'un objectif persistant natif lorsqu'il est disponible, avec résultat attendu, preuves, contraintes, budget et condition de blocage.
+- Ajoute les métadonnées d'objectif à `RUNTIME-STATE.md`.
+- Interdit de présenter Agent, Work locally, idle ou un tour terminé comme une garantie d'autonomie continue.
+- Aligne la clôture sur la vérification réelle des outils et des preuves.
+- Impact de release : `minor`.
+
 ## 1.8.2 - 2026-09-26
 
 ### Exécution agentique sans confirmation redondante

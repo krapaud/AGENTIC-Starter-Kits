@@ -71,6 +71,15 @@ for autonomy_policy in "$codex/policies/AUTONOMY-AND-RECOVERY.md" "$claude/polic
   require_text "$autonomy_policy" "Ne jamais demander ensuite"
 done
 
+for kit_root in "$codex" "$claude"; do
+  require_text "$kit_root/RUNTIME-STATE.md" "goal_status: none"
+  require_text "$kit_root/RUNTIME-STATE.md" "goal_objective:"
+  require_text "$kit_root/policies/SESSION-CONTINUITY-POLICY.md" "objectif persistant"
+  require_text "$kit_root/RUNTIME-STATE.md" "required_action_type: none"
+  require_text "$kit_root/RUNTIME-STATE.md" "pending_request_id: none"
+  require_text "$kit_root/RUNTIME-STATE.md" "budget_status: not-applicable"
+done
+
 for exceptional_policy in "$codex/policies/EXCEPTIONAL-REQUESTS.md" "$claude/policies/EXCEPTIONAL-REQUESTS.md"; do
   require_text "$exceptional_policy" "ne constitue pas une demande d'autorisation supplémentaire"
   require_text "$exceptional_policy" "Il ne demande pas à l'utilisateur de confirmer la création"

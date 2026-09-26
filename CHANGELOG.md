@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.12.7 - 2026-09-26
+
+### Parallélisation contrôlée des agents
+
+- Autorise plusieurs agents sur une même carte lorsque les lots sont indépendants et partitionnés.
+- Autorise plusieurs agents du même rôle sur des cartes, fichiers, parcours ou lots distincts.
+- Ajoute un agent intégrateur chargé de l'assemblage, des conflits, des tests et des preuves finales.
+- Impact de release : `patch`.
+
 ## 1.12.6 - 2026-09-26
 
 ### Contenu visuel frontend premium

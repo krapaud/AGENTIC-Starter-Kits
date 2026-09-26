@@ -66,6 +66,16 @@ for push_policy in "$codex/policies/PUSH-VALIDATION.md" "$claude/policies/PUSH-V
   require_text "$push_policy" "créer une branche propre"
 done
 
+for autonomy_policy in "$codex/policies/AUTONOMY-AND-RECOVERY.md" "$claude/policies/AUTONOMY-AND-RECOVERY.md"; do
+  require_text "$autonomy_policy" "Une demande explicite d'action vaut autorisation"
+  require_text "$autonomy_policy" "Ne jamais demander ensuite"
+done
+
+for exceptional_policy in "$codex/policies/EXCEPTIONAL-REQUESTS.md" "$claude/policies/EXCEPTIONAL-REQUESTS.md"; do
+  require_text "$exceptional_policy" "ne constitue pas une demande d'autorisation supplémentaire"
+  require_text "$exceptional_policy" "Il ne demande pas à l'utilisateur de confirmer la création"
+done
+
 if [ "$failures" -gt 0 ]; then
   exit 1
 fi

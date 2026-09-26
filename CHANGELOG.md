@@ -1,5 +1,13 @@
 ## Unreleased
 
+## 1.12.1 - 2026-09-26
+
+### Correction du synchroniseur external
+
+- Corrige la cible de synchronisation pour éviter la création de `.codex/.codex`.
+- Corrige l’écriture de la version dans `.workspace.toml`.
+- Impact de release : `patch`.
+
 ## 1.12.0 - 2026-09-26
 
 ### Goal automatique pour les cartes Trello multi-étapes

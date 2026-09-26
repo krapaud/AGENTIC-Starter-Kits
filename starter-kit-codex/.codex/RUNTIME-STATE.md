@@ -13,6 +13,11 @@
 - next_action: [[A_COMPLETER]]
 - open_checklist_items: [[A_COMPLETER]]
 - last_observable_evidence: [[A_COMPLETER]]
+- ci_status: not-applicable
+- trello_sync_status: disabled
+- attempt_count: 0
+- max_attempts: 3
+- redundant_confirmation_requested: no
 
 ## Cycle
 

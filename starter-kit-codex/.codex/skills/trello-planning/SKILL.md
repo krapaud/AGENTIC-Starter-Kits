@@ -44,6 +44,12 @@ Une date limite Trello ne suspend jamais tout le projet par défaut. Si une cart
 
 À la date prévue, reprendre la carte au prochain checkpoint, relire son état Trello et vérifier que la condition d’entrée est toujours vraie. Ne pas poller inutilement ni inventer un réveil automatique que l’environnement ne fournit pas. Si aucune exécution planifiée n’est disponible, laisser un checkpoint de reprise explicite. Une échéance dépassée déclenche une réévaluation, pas un contournement de contrôle.
 
+## Enchaînement automatique des cartes autorisées
+
+Lorsqu'une demande utilisateur autorise un lot, la finalisation du tableau ou l'exécution jusqu'à la Definition of Done, la clôture vérifiée d'une carte déclenche immédiatement une relecture du tableau et la sélection de la prochaine carte. Le Coordinateur choisit la première carte dans l'ordre Trello qui est dans `Ready` ou reprenable, sans dépendance ouverte, échéance bloquante ou blocage documenté, et qui possède un propriétaire, un périmètre et une Definition of Done vérifiables.
+
+Il déplace cette carte dans `In Progress`, initialise ou reprend son work item, met à jour `current_action` et `next_action`, puis exécute la première case autonome dans le même cycle d'autorisation. Il ne demande pas « Continue » pour une carte éligible. S'il n'existe aucune carte éligible, il documente les cartes ignorées et leur raison, puis termine uniquement avec `complete`, `needs-review` ou `blocked`. Cette règle ne s'applique pas à une demande explicitement limitée à une seule carte.
+
 ## Sortie
 
 Un tableau réellement créé et vérifié sur Trello, ou un blocage externe documenté avec le tableau local complet, sans tâche implicite, avec traçabilité cahier, code, tests et audit.

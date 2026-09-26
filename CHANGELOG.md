@@ -1,5 +1,13 @@
 ## Unreleased
 
+## 1.12.2 - 2026-09-26
+
+### Enchaînement automatique des cartes Trello
+
+- Ajoute la sélection automatique de la prochaine carte éligible après clôture vérifiée d'une carte lors d'une autorisation de lot.
+- Ignore explicitement les cartes bloquées, dépendantes, `time-gated`, en revue ou déjà terminées.
+- Impact de release : `patch`.
+
 ## 1.12.1 - 2026-09-26
 
 ### Correction du synchroniseur external

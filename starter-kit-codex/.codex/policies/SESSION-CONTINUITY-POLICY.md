@@ -30,6 +30,12 @@ L'agent peut reprendre automatiquement seulement si l'objectif est actif, que la
 
 Quand elles existent, utiliser les commandes natives de l'environnement : `/goal`, `/goal pause`, `/goal resume`, `/goal clear`. Ne pas inventer une commande équivalente et ne pas traiter un mode Agent ou Work locally comme une garantie de persistance.
 
+## Activation automatique depuis Trello
+
+Lorsqu'une demande explicite porte sur la finalisation d'une carte Trello et que sa checklist contient au moins deux éléments ouverts, le Coordinateur doit créer un objectif persistant avant de traiter la première case. L'objectif doit reprendre le titre de la carte, inclure toutes les cases ouvertes, la Definition of Done, les preuves attendues, les contraintes de branche/PR et la condition de blocage.
+
+Le Coordinateur renseigne `goal_status: active`, `goal_objective`, `goal_verification`, `goal_constraints`, `goal_budget`, `goal_blocked_condition` et `goal_session_id` dans `RUNTIME-STATE.md`, puis active `/goal` ou l'API native lorsqu'elle est disponible. Une carte à une seule case, une demande d'information ou une tâche ponctuelle n'active pas automatiquement de Goal.
+
 ## Source de référence
 
 Le comportement attendu est aligné sur la documentation officielle OpenAI sur les Goals et les sessions. Les URLs et la date de consultation doivent être conservées dans le work item ou l'ADR lorsque cette politique influence une décision.

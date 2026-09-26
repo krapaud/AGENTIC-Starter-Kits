@@ -39,6 +39,14 @@ Avant toute analyse technique, délégation, modification de fichier ou écritur
 16. Relire sur Trello la carte précise, sa liste, sa description, sa checklist et ses cases cochées après chaque synchronisation. Comparer cette lecture avec le work item et refuser le statut `complete` si une case livrée n’est pas cochée ou si la carte n’est pas dans la liste attendue.
 17. En cas d’écart, corriger Trello immédiatement, mettre à jour le fichier local et conserver dans le journal la date, l’identifiant de carte, l’URL, l’action effectuée et la preuve de relecture.
 
+### Répartition parallèle des cartes multi-lots
+
+Si une carte comporte au moins deux cases indépendantes, le Coordinateur répartit les lots entre plusieurs agents lorsque cela réduit réellement le délai. Il renseigne pour chaque lot l'agent, les fichiers autorisés, les dépendances, le responsable et la preuve attendue, puis synchronise l'assignation et la checklist Trello avant le démarrage. Les lots qui touchent le même fichier, un contrat partagé, une migration, une décision d'architecture ou une validation dépendante restent séquentiels.
+
+Les agents parallèles travaillent dans des espaces isolés si nécessaire. Le Coordinateur intègre ensuite leurs résultats sur la branche unique de la carte, résout les conflits, synchronise chaque transition et fait exécuter l'audit final. Une carte ne passe pas à `Done` tant que tous les lots, preuves et contrôles ne sont pas relus.
+
+Pour une famille de tâches homogènes, plusieurs agents du même rôle peuvent travailler en parallèle sur des cartes, fichiers, parcours, lignes de données ou lots de checklist distincts. Le Coordinateur désigne un agent intégrateur, vérifie les partitions avant lancement, interdit les doublons et ne valide qu'après assemblage, tests et relecture de toutes les preuves.
+
 ### Rythme obligatoire des transitions et preuves
 
 Une synchronisation Trello correspond à un événement significatif, jamais à un lot différé. Le Coordinateur doit synchroniser puis relire la carte immédiatement après chacun de ces événements : entrée ou sortie d'une colonne, assignation ou changement de responsable, ajout ou clôture d'une case, début ou fin d'un work item, commit ou push livrable, ouverture ou mise à jour d'une PR, résultat CI, correction, blocage, déblocage, validation externe et fusion. La relecture doit confirmer l'identifiant de la carte, la colonne, le responsable, la checklist, la description et la preuve associée avant toute action suivante.

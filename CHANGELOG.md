@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.12.0 - 2026-09-26
+
+### Goal automatique pour les cartes Trello multi-étapes
+
+- Active automatiquement le contrat Goal pour une demande de finalisation d'une carte comportant au moins deux cases ouvertes.
+- Rattache l'objectif au titre, à la checklist, à la Definition of Done, aux preuves et aux contraintes de livraison de la carte.
+- Conserve un fonctionnement local explicite lorsque le mécanisme Goal natif n'est pas disponible.
+- Impact de release : `minor`.
+
 ## 1.11.0 - 2026-09-26
 
 ### Application du cahier des charges agentique

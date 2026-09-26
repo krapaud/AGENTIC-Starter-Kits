@@ -19,6 +19,7 @@ if [ -f "$root/.workspace.toml" ]; then
   workflow="$root/.github/workflows/update-workspace-kit.yml"
   [ -f "$workflow" ] || { echo "ECHEC EXTERNAL: workflow de mise à jour absent"; exit 1; }
   grep -q 'Update workspace kit' "$workflow" || { echo "ECHEC EXTERNAL: workflow invalide"; exit 1; }
+  bash "$script_dir/validate-obligations.sh" --if-present
   echo "Validation external avant push OK"
   exit 0
 fi
@@ -86,6 +87,7 @@ if [ -n "$base" ]; then
 fi
 
 git -C "$root" diff --check
+bash "$script_dir/validate-obligations.sh" --if-present
 bash "$script_dir/preflight.sh"
 bash "$script_dir/run-project-checks.sh" --execute
 echo "Validation avant push OK"

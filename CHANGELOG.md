@@ -1,3 +1,50 @@
+## Unreleased
+
+### Exécution agentique sans confirmation redondante
+
+- Autorise immédiatement les actions réversibles explicitement demandées par l'utilisateur, notamment la création d'une carte Trello et du work item associé.
+- Interdit de demander une confirmation supplémentaire pour une action déjà demandée.
+- Ajoute des contrôles de cohérence pour maintenir cette règle dans les kits Codex et Claude.
+- Impact de release prévu : `patch` lors de la prochaine promotion vers `main`.
+
+## 1.8.0 - 2026-09-25
+
+### Portes de gouvernance exécutables
+
+- Ajoute un registre TSV structuré aux nouveaux work items pour les huit portes du contrat central.
+- Bloque le push et la livraison lorsqu une porte reste ouverte ou sans preuve.
+- Ajoute des scénarios de non-régression pour les registres incomplets, valides et sans preuve.
+- Exécute les tests de gouvernance dans la CI et contrôle la parité Codex et Claude.
+
+## 1.7.0 - 2026-09-25
+
+### Contrat de gouvernance central
+
+- Ajoute un registre d obligations persistant avec responsable, déclencheur, preuve, état et prochaine action.
+- Ajoute huit portes obligatoires couvrant intake, conception, périmètre, validation, documentation, intégrations, audit et livraison.
+- Aligne les parcours Codex et Claude et ajoute un audit automatisé de cohérence.
+- Interdit la clôture tant qu une obligation applicable ne possède pas de preuve ou une justification explicite.
+
+### Synchronisation Trello
+
+- Privilégie les connecteurs Trello déjà disponibles dans la session.
+- Interdit de proposer l’installation d’outils de remplacement lorsqu’une intégration connectée existe.
+- Ajoute un checkpoint local et la poursuite des tâches indépendantes lorsque Trello est réellement indisponible.
+
+## 1.6.3 - 2026-09-25
+
+### Autonomie après le cadrage
+
+- Conserve les réponses partielles au questionnaire et ne redemande que les décisions réellement manquantes.
+- Lance automatiquement l onboarding, la conception et le flux prévu dès que les blocages de cadrage sont levés.
+- Interdit de demander « Continue » ou « fais tout » pour déclencher une étape déjà autorisée.
+
+### Intégrité des branches
+
+- Ajoute un contrôle explicite du diff complet par rapport au work item avant commit final et Pull Request.
+- Bloque les branches qui mélangent internationalisation, configuration, maintenance ou plusieurs work items.
+- Documente la création automatique d’une branche propre depuis la branche d’intégration et le report des seuls commits pertinents.
+
 ## 1.6.2 - 2026-09-24
 
 ### Synchronisation temps réel Trello

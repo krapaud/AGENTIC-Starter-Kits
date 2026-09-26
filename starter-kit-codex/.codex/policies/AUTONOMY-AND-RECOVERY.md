@@ -12,6 +12,8 @@ Sont autorisés sans nouvelle question : analyser, rechercher, concevoir, coder,
 
 Une permission d'exécution affichée par l'environnement n'est pas une décision métier. L'agent décrit brièvement l'action, utilise l'autorisation déjà accordée et reprend automatiquement dès que l'environnement l'autorise.
 
+Une demande explicite d'action vaut autorisation pour cette action et ses étapes réversibles nécessaires. Par exemple, « ajoute une carte », « crée le work item », « synchronise Trello » ou « prépare cette amélioration » autorise la création ou la mise à jour correspondante. Ne jamais demander ensuite « confirmes-tu ? », « puis-je la créer ? » ou afficher un bouton de confirmation pour la même action. Une question supplémentaire n'est permise que si elle porte sur une décision métier, une action irréversible, une dépense, un accès externe ou une information réellement manquante.
+
 Après chaque action, l'agent choisit immédiatement l'étape suivante selon cet ordre :
 
 1. Corriger l'échec observé.

@@ -18,6 +18,31 @@
 - attempt_count: 0
 - max_attempts: 3
 - redundant_confirmation_requested: no
+- goal_status: none
+- goal_objective: [[A_COMPLETER]]
+- goal_verification: [[A_COMPLETER]]
+- goal_constraints: [[A_COMPLETER]]
+- goal_budget: [[A_COMPLETER]]
+- goal_blocked_condition: [[A_COMPLETER]]
+- goal_session_id: none
+- required_action_type: none
+- required_action_id: none
+- required_action_status: none
+- last_session_event_id: none
+- last_persisted_item_id: none
+- reconnect_attempts: 0
+- pending_request_id: none
+- pending_turn_id: none
+- environment_status: not-required
+- environment_shutdown_status: not-required
+- budget_status: not-applicable
+- trace_id: none
+- artifact_manifest: none
+- webhook_event_id: none
+- last_turn_id: none
+- last_turn_status: not-applicable
+- tool_failures: 0
+- session_status: not-required
 
 ## Cycle
 

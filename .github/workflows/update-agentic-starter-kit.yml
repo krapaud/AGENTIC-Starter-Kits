@@ -1,0 +1,58 @@
+name: Update Agentic Starter Kit
+
+on:
+  schedule:
+    - cron: '17 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure starter kit source
+        run: git remote add upstream https://github.com/krapaud/AGENTIC-Starter-Kits.git
+
+      - name: Select protected integration branch
+        id: integration
+        run: |
+          if git ls-remote --exit-code --heads origin develop >/dev/null 2>&1; then
+            echo "branch=develop" >> "$GITHUB_OUTPUT"
+          elif git ls-remote --exit-code --heads origin dev >/dev/null 2>&1; then
+            echo "branch=dev" >> "$GITHUB_OUTPUT"
+          else
+            echo "Aucune branche d’intégration dev ou develop n’existe." >&2
+            exit 1
+          fi
+      - name: Bootstrap updater from official source
+        run: |
+          mkdir -p .codex/scripts
+          git show upstream/main:starter-kit-codex/.codex/scripts/update-starter-kit.sh > .codex/scripts/update-starter-kit.sh
+          chmod +x .codex/scripts/update-starter-kit.sh
+      - name: Update Codex kit
+        run: bash .codex/scripts/update-starter-kit.sh --remote upstream --ref main --branch chore/update-agentic-kit
+
+      - name: Validate update
+        run: bash .codex/scripts/verify-before-push.sh
+
+      - name: Open update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/update-agentic-kit
+          base: ${{ steps.integration.outputs.branch }}
+          delete-branch: true
+          title: 'chore: update Agentic starter kit'
+          commit-message: 'chore: update Agentic starter kit'
+          body: |
+            Mise à jour automatique du starter kit depuis le dépôt officiel.
+
+            La PR conserve le profil projet, les décisions, les travaux et l’état d’exécution locaux.
+            Les contrôles qualité doivent être verts avant fusion.

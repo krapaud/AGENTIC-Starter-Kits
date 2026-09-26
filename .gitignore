@@ -23,3 +23,5 @@ htmlcov/
 .ruff_cache/
 .cache/
 *.log
+.codex/
+AGENTS.md

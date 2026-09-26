@@ -1,5 +1,12 @@
 ## Unreleased
 
+### Exécution agentique sans confirmation redondante
+
+- Autorise immédiatement les actions réversibles explicitement demandées par l'utilisateur, notamment la création d'une carte Trello et du work item associé.
+- Interdit de demander une confirmation supplémentaire pour une action déjà demandée.
+- Ajoute des contrôles de cohérence pour maintenir cette règle dans les kits Codex et Claude.
+- Impact de release prévu : `patch` lors de la prochaine promotion vers `main`.
+
 ## 1.8.0 - 2026-09-25
 
 ### Portes de gouvernance exécutables

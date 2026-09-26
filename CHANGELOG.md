@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.12.6 - 2026-09-26
+
+### Contenu visuel frontend premium
+
+- Encourage la génération d'images réalistes et spécifiques lorsque le produit en a besoin.
+- Ajoute les contrôles de provenance, artefacts, responsive, performance, accessibilité et crédibilité.
+- Renforce les livrables et interdictions de l'agent frontend Codex et Claude.
+- Impact de release : `patch`.
+
 ## 1.12.5 - 2026-09-26
 
 ### Attente récupérable des Goals

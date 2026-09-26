@@ -48,6 +48,10 @@ Ne pas hésiter à générer une image lorsque le produit a besoin d'un visuel a
 
 Aucune ressource sans provenance, aucune animation sans stratégie de réduction du mouvement et aucune validation visuelle non vérifiée.
 
+## Cible Framer-like
+
+Pour les expériences frontend qui le permettent, viser un rendu Framer-like à 99 % sur la perception visuelle, sans copier une marque ou un site précis. Évaluer la cible sur la composition, la hiérarchie, le rythme, la typographie, la profondeur, la lumière, les textures, les transitions, les interactions, les états, le responsive et les micro-détails. Réaliser une comparaison réelle dans le navigateur aux viewports prévus, consigner les écarts observés et corriger les écarts majeurs avant livraison. La cible ne permet jamais de sacrifier accessibilité, performance, contenu réel, provenance ou maintenabilité.
+
 ## Validation obligatoire
 
 Tester lint, tests, accessibilité, responsive, erreurs, performance et mouvement réduit. Fournir des captures des parcours importants. Faire relire le rendu par l'auditeur et inscrire chaque défaut dans `docs/quality/quality-journal.md`. Ne jamais pousser sans `verify-before-push`.

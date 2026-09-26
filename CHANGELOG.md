@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.12.8 - 2026-09-26
+
+### Cible frontend Framer-like
+
+- Ajoute une cible comparative de rendu Framer-like à 99 % sur la qualité perçue.
+- Renforce les contrôles de composition, motion, interactions, responsive et micro-détails.
+- Maintient les exigences d'accessibilité, de performance, de provenance et de maintenabilité.
+- Impact de release : `patch`.
+
 ## 1.12.7 - 2026-09-26
 
 ### Parallélisation contrôlée des agents

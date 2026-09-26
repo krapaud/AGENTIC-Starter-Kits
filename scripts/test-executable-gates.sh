@@ -11,7 +11,9 @@ for kit in codex claude; do
   config="$test_root/$hidden"
   mkdir -p "$config/scripts" "$config/work-items/demo"
   cp "$source_config/scripts/guard-before-response.sh" "$config/scripts/"
+  cp "$source_config/scripts/checkpoint.sh" "$config/scripts/"
   cp "$source_config/RUNTIME-STATE.md" "$config/"
+  : > "$config/runtime-events.log"
   cp "$source_config/scripts/validate-obligations.sh" "$config/scripts/"
   cp "$source_config/templates/obligation-register.tsv" "$config/work-items/demo/obligations.tsv"
   cp "$source_config/templates/work-item.md" "$config/work-items/demo/brief.md"
@@ -27,6 +29,14 @@ for kit in codex claude; do
     exit 1
   fi
   grep -q "état non terminal" "$test_root/guard.err"
+
+  bash "$config/scripts/checkpoint.sh" validation waiting "attente récupérable" >/dev/null
+  grep -q '^- execution_status: waiting-ci$' "$config/RUNTIME-STATE.md"
+  if grep -q '^- execution_status: blocked$' "$config/RUNTIME-STATE.md"; then
+    echo "ECHEC TEST: une attente récupérable ne doit pas bloquer le Goal $kit"
+    exit 1
+  fi
+
   perl -0pi -e 's/execution_status: .*/execution_status: complete/; s/next_action: .*/next_action: none/; s/open_checklist_items: .*/open_checklist_items: 0/; s/last_observable_evidence: .*/last_observable_evidence: test-evidence/; s/ci_status: .*/ci_status: success/; s/trello_sync_status: .*/trello_sync_status: disabled/' "$config/RUNTIME-STATE.md"
   if bash "$config/scripts/guard-before-response.sh" >/dev/null 2>&1; then
     echo "ECHEC TEST: une obligation pending aurait dû bloquer complete $kit"

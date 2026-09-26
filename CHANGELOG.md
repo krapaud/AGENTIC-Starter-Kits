@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.12.5 - 2026-09-26
+
+### Attente récupérable des Goals
+
+- Ajoute l'état `waiting` pour les CI, intégrations temporaires indisponibles et commandes réessayables.
+- Interdit de transformer automatiquement ces attentes en `blocked` ou en pause native du Goal.
+- Ajoute un test vérifiant qu'un checkpoint `waiting` conserve la reprise possible.
+- Impact de release : `patch`.
+
 ## 1.12.4 - 2026-09-26
 
 ### Synchronisation Trello événementielle

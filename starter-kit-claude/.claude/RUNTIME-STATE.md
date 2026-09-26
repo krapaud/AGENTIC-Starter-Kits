@@ -6,6 +6,13 @@
 - Work item actif : [[A_COMPLETER]]
 - Dernière mise à jour : [[A_COMPLETER]]
 - Responsable : Coordinateur
+- execution_session: [[A_COMPLETER]]
+- execution_status: running
+- active_card: [[A_COMPLETER]]
+- current_action: [[A_COMPLETER]]
+- next_action: [[A_COMPLETER]]
+- open_checklist_items: [[A_COMPLETER]]
+- last_observable_evidence: [[A_COMPLETER]]
 
 ## Cycle
 

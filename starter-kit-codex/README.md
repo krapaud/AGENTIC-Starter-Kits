@@ -197,7 +197,7 @@ Chaque nouveau work item reçoit `obligations.tsv`. `bash .codex/scripts/validat
 
 Le fichier `.codex/SPECIALIST-AGENTS.md` définit les conditions d’activation, les livrables et l’ordre de contrôle des dix spécialistes. Le Coordinateur lit ce fichier avant toute délégation, consulte `[agents]` dans le profil et justifie chaque activation dans le work item.
 
-Le kit comprend aussi `RUNTIME-STATE.md` et `scripts/checkpoint.sh` pour reprendre une session, `scripts/cost-tracker.sh` pour aider le Coordinateur à réduire les coûts, et le mode Trello `time-gated` pour suspendre uniquement une carte dépendante d’une échéance. Les flux indépendants continuent.
+Le kit comprend aussi `RUNTIME-STATE.md`, `scripts/checkpoint.sh` et `scripts/guard-before-response.sh` pour reprendre une session et empêcher une conclusion prématurée, `scripts/cost-tracker.sh` pour aider le Coordinateur à réduire les coûts, et le mode Trello `time-gated` pour suspendre uniquement une carte dépendante d’une échéance. Les flux indépendants continuent.
 
 Toute évolution doit mettre à jour ce README, `CHANGELOG.md`, la version SemVer, le titre et la description de la Pull Request. Une livraison sans documentation correspondante est refusée.
 

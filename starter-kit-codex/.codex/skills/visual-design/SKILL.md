@@ -42,6 +42,8 @@ Priorité : ressource fournie ou créée spécifiquement, image réaliste géné
 
 Pour une image générée, documenter le brief visuel, le réalisme recherché, les retouches et les artefacts contrôlés. Éviter mains déformées, textes illisibles, logos inventés et faux témoignages. Toute retouche doit rester compatible avec la licence et ne pas tromper l'utilisateur.
 
+Ne pas hésiter à générer une image lorsque le produit a besoin d'un visuel absent, mais rechercher un résultat proche du réel, premium et spécifique au contexte plutôt qu'une illustration générique. Définir avant génération le sujet, le point focal, la lumière, la palette, le cadrage, le ratio, les variantes mobile et desktop, le niveau de réalisme et les éléments à exclure. Après génération, contrôler les artefacts, le recadrage, la lisibilité, la cohérence de marque, le poids, la provenance et l'usage prévu avant intégration.
+
 ## Contrôles
 
 Aucune ressource sans provenance, aucune animation sans stratégie de réduction du mouvement et aucune validation visuelle non vérifiée.

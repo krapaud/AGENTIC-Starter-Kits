@@ -182,7 +182,7 @@ Le kit impose :
 
 Les kits Codex et Claude appliquent un contrat central commun. Chaque work item produit un registre d obligations avec responsable, déclencheur, preuve, état et prochaine vérification. Huit portes contrôlent l intake, la conception, le périmètre Git, les validations, la documentation, les intégrations, l audit et la livraison. Une porte non prouvée interdit la clôture sans interrompre les tâches indépendantes.
 
-`RUNTIME-STATE.md` conserve les obligations ouvertes, la prochaine action, la dernière preuve, l état CI et les intégrations. Une nouvelle conversation reprend cette action avant tout résumé. Chaque work item possède aussi un registre `obligations.tsv` vérifié automatiquement avant push et livraison. Les scripts `scripts/audit-governance-consistency.sh` et `scripts/test-executable-gates.sh` bloquent les divergences et les portes sans preuve.
+`RUNTIME-STATE.md` conserve les obligations ouvertes, la prochaine action, la dernière preuve, l état CI et les intégrations. Une nouvelle conversation reprend cette action avant tout résumé. Chaque work item possède aussi un registre `obligations.tsv` vérifié automatiquement avant push et livraison. Les scripts `scripts/audit-governance-consistency.sh`, `scripts/test-executable-gates.sh` et `guard-before-response.sh` bloquent les divergences, les portes sans preuve et les réponses finales prématurées.
 
 ## Sécurité et confiance
 

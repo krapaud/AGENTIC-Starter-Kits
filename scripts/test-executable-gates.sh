@@ -10,6 +10,8 @@ for kit in codex claude; do
   trap 'rm -rf "$test_root"' EXIT
   config="$test_root/$hidden"
   mkdir -p "$config/scripts" "$config/work-items/demo"
+  cp "$source_config/scripts/guard-before-response.sh" "$config/scripts/"
+  cp "$source_config/RUNTIME-STATE.md" "$config/"
   cp "$source_config/scripts/validate-obligations.sh" "$config/scripts/"
   cp "$source_config/templates/obligation-register.tsv" "$config/work-items/demo/obligations.tsv"
   cp "$source_config/templates/work-item.md" "$config/work-items/demo/brief.md"
@@ -19,6 +21,14 @@ for kit in codex claude; do
     echo "ECHEC TEST: le registre pending aurait dû bloquer $kit"
     exit 1
   fi
+
+  if bash "$config/scripts/guard-before-response.sh" >/dev/null 2>"$test_root/guard.err"; then
+    echo "ECHEC TEST: l'état running aurait dû bloquer la réponse $kit"
+    exit 1
+  fi
+  grep -q "état non terminal" "$test_root/guard.err"
+  perl -0pi -e 's/execution_status: .*/execution_status: complete/; s/next_action: .*/next_action: none/; s/open_checklist_items: .*/open_checklist_items: 0/; s/last_observable_evidence: .*/last_observable_evidence: test-evidence/' "$config/RUNTIME-STATE.md"
+  bash "$config/scripts/guard-before-response.sh" >/dev/null
 
   perl -0pi -e 's/\tpending\tnot-collected\t/\tverified\ttest-evidence\t/g' "$config/work-items/demo/obligations.tsv"
   bash "$config/scripts/validate-obligations.sh" --require-active >/dev/null

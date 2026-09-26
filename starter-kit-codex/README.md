@@ -1,6 +1,6 @@
 # Kit d'orchestration Codex portable
 
-![Version du kit](https://img.shields.io/badge/version-1.8.1-blue.svg)
+![Version du kit](https://img.shields.io/badge/version-1.8.2-blue.svg)
 
 Ce kit installe une gouvernance projet pour Codex. Il ne construit rien tant que le cahier des charges n'a pas été fourni et formalisé.
 
@@ -187,7 +187,7 @@ Le Coordinateur ne les appelle pas tous systématiquement. Il lit `.codex/SPECIA
 
 Une CI en cours ne clôture jamais le work item. Le Coordinateur attend les résultats, traite les erreurs, corrige les lints et les dettes historiques du périmètre par lots, puis relance les contrôles jusqu’à la Definition of Done.
 
-Le kit est actuellement en version `1.8.1`. Toute modification du kit doit mettre à jour ce README, le changelog et la version selon `VERSIONING.md`.
+Le kit est actuellement en version `1.8.2`. Toute modification du kit doit mettre à jour ce README, le changelog et la version selon `VERSIONING.md`.
 
 Le contrat central `.codex/policies/CORE-EXECUTION-CONTRACT.md` impose un registre d obligations, huit portes de validation et une reprise persistante. Une tâche ne peut être clôturée tant qu une obligation applicable ne possède pas de preuve.
 
@@ -197,7 +197,7 @@ Chaque nouveau work item reçoit `obligations.tsv`. `bash .codex/scripts/validat
 
 Le fichier `.codex/SPECIALIST-AGENTS.md` définit les conditions d’activation, les livrables et l’ordre de contrôle des dix spécialistes. Le Coordinateur lit ce fichier avant toute délégation, consulte `[agents]` dans le profil et justifie chaque activation dans le work item.
 
-Le kit comprend aussi `RUNTIME-STATE.md` et `scripts/checkpoint.sh` pour reprendre une session, `scripts/cost-tracker.sh` pour aider le Coordinateur à réduire les coûts, et le mode Trello `time-gated` pour suspendre uniquement une carte dépendante d’une échéance. Les flux indépendants continuent.
+Le kit comprend aussi `RUNTIME-STATE.md`, `scripts/checkpoint.sh` et `scripts/guard-before-response.sh` pour reprendre une session et empêcher une conclusion prématurée, `scripts/cost-tracker.sh` pour aider le Coordinateur à réduire les coûts, et le mode Trello `time-gated` pour suspendre uniquement une carte dépendante d’une échéance. Les flux indépendants continuent.
 
 Toute évolution doit mettre à jour ce README, `CHANGELOG.md`, la version SemVer, le titre et la description de la Pull Request. Une livraison sans documentation correspondante est refusée.
 

@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 1.12.4 - 2026-09-26
+
+### Synchronisation Trello événementielle
+
+- Interdit les mises à jour groupées après plusieurs transitions ou preuves.
+- Impose une synchronisation et une relecture immédiates après chaque événement significatif.
+- Documente le checkpoint local et le rejeu ordonné en cas d'indisponibilité Trello.
+- Impact de release : `patch`.
+
 ## 1.12.3 - 2026-09-26
 
 ### Dimensionnement adaptatif des tableaux Trello

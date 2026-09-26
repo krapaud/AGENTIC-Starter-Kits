@@ -44,6 +44,12 @@ Avant toute analyse technique, délégation, modification de fichier ou écritur
 15. Relire sur Trello la carte précise, sa liste, sa description, sa checklist et ses cases cochées après chaque synchronisation. Comparer cette lecture avec le work item et refuser le statut `complete` si une case livrée n’est pas cochée ou si la carte n’est pas dans la liste attendue.
 16. En cas d’écart, corriger Trello immédiatement, mettre à jour le fichier local et conserver dans le journal la date, l’identifiant de carte, l’URL, l’action effectuée et la preuve de relecture.
 
+### Rythme obligatoire des transitions et preuves
+
+Une synchronisation Trello correspond à un événement significatif, jamais à un lot différé. Le Coordinateur doit synchroniser puis relire la carte immédiatement après chacun de ces événements : entrée ou sortie d'une colonne, assignation ou changement de responsable, ajout ou clôture d'une case, début ou fin d'un work item, commit ou push livrable, ouverture ou mise à jour d'une PR, résultat CI, correction, blocage, déblocage, validation externe et fusion. La relecture doit confirmer l'identifiant de la carte, la colonne, le responsable, la checklist, la description et la preuve associée avant toute action suivante.
+
+Il est interdit de regrouper plusieurs transitions ou preuves dans une seule mise à jour de fin de lot. Une panne Trello autorise uniquement un checkpoint local horodaté avec l'événement, la tentative, l'erreur, la prochaine action et le statut `pending_activation` ou `blocked`; dès que l'intégration revient, les événements sont rejoués dans l'ordre et relus un par un. Une carte ne peut passer à `Done` qu'après la dernière synchronisation et sa relecture réussie.
+
 ## Échéances et pauses contrôlées
 
 Une date limite Trello ne suspend jamais tout le projet par défaut. Si une carte ne peut commencer avant sa date, la marquer `time-gated`, enregistrer la date ISO, la raison, les dépendances et la prochaine action dans le work item et `RUNTIME-STATE.md`. Suspendre uniquement cette carte et ses dépendances directes. Continuer les cartes indépendantes autorisées.
